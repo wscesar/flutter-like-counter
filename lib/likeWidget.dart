@@ -79,7 +79,7 @@ class _LikeWidgetState extends State<LikeWidget> {
 
               FloatingActionButton(
                 onPressed: _incrementLike,
-                child: Icon(Icons.thumb_up,color: Colors.white,),
+                child: Icon(Icons.thumb_up),
                 backgroundColor: Colors.green,
               ),
 
