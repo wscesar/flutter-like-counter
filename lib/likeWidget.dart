@@ -15,12 +15,6 @@ class _LikeWidgetState extends State<LikeWidget> {
 
   int _like = 0;
 
-  //_updateLikes(int delta) {
-  //  setState(() {
-  //   _like += delta; 
-  //  });
-  //}
-
   void _incrementLike() {
     setState(() {
      _like++; 
@@ -54,10 +48,12 @@ class _LikeWidgetState extends State<LikeWidget> {
             Icon(Icons.thumb_up),
             Text(
               'Você curtiu esse app:',
+              style: TextStyle(fontSize: 16.0),
             ),
             Text(
               '$_like' 'x',
-              style: Theme.of(context).textTheme.display1,
+              style: TextStyle(fontSize: 40.0),
+              
             ),
           ],
         ),
@@ -67,7 +63,7 @@ class _LikeWidgetState extends State<LikeWidget> {
         children: <Widget>[
 
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: FloatingActionButton(
               child: Icon(Icons.thumb_down,color: Colors.white,),
               onPressed: _decrementLike,
@@ -75,7 +71,7 @@ class _LikeWidgetState extends State<LikeWidget> {
           ),
           
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: FloatingActionButton(
               child: Icon(Icons.thumb_up,color: Colors.white,),
               onPressed: _incrementLike,
