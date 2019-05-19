@@ -1,24 +1,15 @@
 import 'package:flutter/material.dart';
 import 'likeWidget.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+  debugShowCheckedModeBanner: false,
+  
+  title: 'Flutter Demo',
 
-class MyApp extends StatelessWidget {
+  theme: ThemeData(
+    primarySwatch: Colors.green,
+  ),
 
-  @override
-  Widget build(BuildContext context) {
+  home: LikeWidget(),
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-
-      title: 'Flutter Demo',
-
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-
-      home: LikeWidget(),
-
-    );
-  }
-}
+));
