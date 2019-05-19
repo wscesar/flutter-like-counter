@@ -38,47 +38,58 @@ class _LikeWidgetState extends State<LikeWidget> {
       
       appBar: AppBar(
         title: Text('Contador de Likes'),
+        backgroundColor: Colors.blueAccent,
+        centerTitle: true,
       ),
 
-      body: Center(
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(Icons.thumb_up),
-            Text(
-              'Você curtiu esse app:',
-              style: TextStyle(fontSize: 16.0),
-            ),
-            Text(
-              '$_like' 'x',
-              style: TextStyle(fontSize: 40.0),
-              
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton:Row(
+      body: Column (
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
+
         children: <Widget>[
 
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: FloatingActionButton(
-              child: Icon(Icons.thumb_down,color: Colors.white,),
-              onPressed: _decrementLike,
-            ),
+          Icon(Icons.thumb_up),
+
+          Text(
+            'Você curtiu esse app:',
+            style: TextStyle(fontSize: 16.0, ),
+            textAlign: TextAlign.center,
           ),
-          
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: FloatingActionButton(
-              child: Icon(Icons.thumb_up,color: Colors.white,),
-              onPressed: _incrementLike,
-            ),
+
+          Text(
+            '$_like' 'x',
+            style: TextStyle(fontSize: 40.0),
+            textAlign: TextAlign.center,
           ),
+
+          Divider(height: 30),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+
+            children: <Widget>[
+
+              FloatingActionButton(
+                onPressed: _decrementLike,
+                child: Icon(Icons.thumb_down),
+                backgroundColor: Colors.red,
+              ),
+
+              Padding(padding: EdgeInsets.all(8)),
+
+              FloatingActionButton(
+                onPressed: _incrementLike,
+                child: Icon(Icons.thumb_up,color: Colors.white,),
+                backgroundColor: Colors.green,
+              ),
+
+            ],
+
+          ),
+
         ],
-      )
+
+      ),
 
     );
   }
